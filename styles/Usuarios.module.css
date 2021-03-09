@@ -16,7 +16,7 @@
     font-weight: 600;
 }
 
-.gridCursos{
+.gridUsuarios{
     display: grid;
     grid-template-columns: 0.4fr 2fr 2fr 2fr 2fr 1fr 1fr;
 
@@ -33,8 +33,4 @@
     margin: 5px;
 
     border-bottom: 1px solid var(--background);
-}
-
-.gridCursos i{
-    cursor: pointer;
 }

@@ -14,3 +14,24 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+:root{
+  --text: #666666;
+  --background: #d8d4d4
+}
+
+.containerAllPages{
+  min-height: 100vh;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top:6rem
+}
+
+i{
+  margin-top: 3px;
+  margin-right: 5px;
+  cursor: pointer;
+}

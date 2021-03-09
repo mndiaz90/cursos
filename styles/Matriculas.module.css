@@ -16,7 +16,7 @@
     font-weight: 600;
 }
 
-.gridCursos{
+.gridMatriculas{
     display: grid;
     grid-template-columns: 0.4fr 2fr 2fr 2fr 2fr 1fr 1fr;
 
@@ -35,6 +35,6 @@
     border-bottom: 1px solid var(--background);
 }
 
-.gridCursos i{
+.gridMatriculas i{
     cursor: pointer;
 }
