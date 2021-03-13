@@ -27,11 +27,17 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  top:6rem
+  top:4rem
 }
 
 i{
   margin-top: 3px;
   margin-right: 5px;
   cursor: pointer;
+}
+.containerFormGerenciar{
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  width: 60%;
+  margin: auto;
 }

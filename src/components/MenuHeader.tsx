@@ -19,7 +19,9 @@ export function MenuHeader() {
                 <Dropdown.Toggle split id="dropdown-split-basic" />
 
                 <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Adicionar usuario</Dropdown.Item>
+                    <Dropdown.Item >
+                        <Link href="/gerenciarusuario">Adicionar usuario</Link>
+                    </Dropdown.Item>
                     <Dropdown.Item >
                         <Link href="/usuarios">Listagem</Link>
                     </Dropdown.Item>
@@ -35,7 +37,9 @@ export function MenuHeader() {
                 <Dropdown.Toggle split id="dropdown-split-basic" />
 
                 <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Adicionar curso</Dropdown.Item>
+                    <Dropdown.Item>
+                        <Link href="/gerenciarcurso">Adicionar curso</Link>
+                    </Dropdown.Item>
                     <Dropdown.Item >
                         <Link href="/cursos">Listagem</Link>
                     </Dropdown.Item>

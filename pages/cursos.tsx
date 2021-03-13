@@ -10,18 +10,18 @@ interface CursoProps {
 
 interface DadosCurso {
     id: number;
-    email: string;
-    first_name: string;
-    avatar: string
+    Nome: string;
+    ValorMensalidade: number;
+    ValorMatricula: number;
+    Periodo: string;
+    Duracao: number;
 }
 
 export default function Cursos(props: CursoProps) {
-
     return (
         <>
             <MenuHeader />
             <div className='containerAllPages'>
-
                 <h3>Listagem de cursos</h3>
                 <div className={styles.textGridHeader}>
                     <span>#</span>
@@ -33,12 +33,12 @@ export default function Cursos(props: CursoProps) {
                 </div>
                 {props.dados && props.dados.map((curso, index) => {
                     return <ul key={index} className={styles.gridCursos} >
-                        <li>{curso.id}</li>
-                        <li>{curso.first_name}</li>
-                        <li>{curso.email}</li>
-                        <li>50</li>
-                        <li>2021-2022</li>
-                        <li>10 dias</li>
+                        <li>{index + 1}</li>
+                        <li>{curso.Nome}</li>
+                        <li>{curso.ValorMensalidade}</li>
+                        <li>{curso.ValorMatricula}</li>
+                        <li>{curso.Periodo}</li>
+                        <li>{curso.Duracao == 1 ? curso.Duracao + ' mes' : curso.Duracao + ' meses'} </li>
                         <li>
                             <i className="fa fa-eye" style={{ marginRight: '5px' }}></i>
                             <i className="fa fa-pencil"></i>
@@ -48,15 +48,14 @@ export default function Cursos(props: CursoProps) {
             </div>
         </>
     )
-
 }
 
 Cursos.getInitialProps = async () => {
     const response = await axios.get(
-        'https://reqres.in/api/users?page=1'
+        'http://localhost:8080/cursos'
     )
 
     return {
-        dados: response.data.data
+        dados: response.data
     }
 }
