@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MenuHeader } from "../src/components/MenuHeader";
 import Link from "next/link";
-import axios from 'axios'
+import axios from 'axios';
 
 interface DadosCurso {
     id: number;
@@ -23,9 +23,9 @@ export default function GerenciarCurso() {
         Periodo: "matutino",
         Duracao: 0,
         Descricao: "",
-    })
+    });
 
-    function onChangeData(evt) {
+    function onChangeData(evt: ChangeEvent<HTMLInputElement>) {
         const value = evt.target.value;
         setDados({
             ...dados,
@@ -39,9 +39,12 @@ export default function GerenciarCurso() {
         axios.post(
             'http://localhost:8080/curso/create', dados
         ).then((response) => {
-            console.log(response);
+            if (response.data.error)
+                return alert('Curso nao cadastrado!')
+            alert('Curso cadastrado con sucesso!')
+            evt.target.form.reset();
         }, (error) => {
-            console.log(error);
+            alert(error)
         });
     }
 

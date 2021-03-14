@@ -39,12 +39,12 @@ server.get('/cursos', (req, res) => {
 
 server.post('/curso/create', (req, res) => {
   const curso = Curso.create(req.body, (error) => {
-    if (error) return res.status(200).json({
+    if (error) return res.status(400).json({
       error: true,
       message: 'Curso nao cadastrado com sucesso'
     })
 
-    return res.status(400).json({
+    return res.status(200).json({
       error: false,
       message: 'Curso cadastrado com sucesso'
     })
