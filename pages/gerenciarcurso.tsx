@@ -41,7 +41,7 @@ export default function GerenciarCurso() {
         ).then((response) => {
             if (response.data.error) return alert('Curso nao cadastrado!')
             alert('Curso cadastrado con sucesso!')
-            evt.target.reset();
+            // evt.target.reset();
         }, (error) => {
             alert(error)
         });
