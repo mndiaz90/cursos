@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+const uri = process.env.MONGODB_URI;
+
 require('./models/Curso')
 
 const Curso = mongoose.model('curso')
@@ -15,7 +17,7 @@ server.use((req, res, next) => {
   next()
 })
 
-mongoose.connect('mongodb://localhost/matricula', {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
