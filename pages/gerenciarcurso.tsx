@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MenuHeader } from "../src/components/MenuHeader";
 import Link from "next/link";
@@ -33,16 +33,15 @@ export default function GerenciarCurso() {
         });
     }
 
-    function onClickCadastrar(evt) {
+    function onClickCadastrar(evt: FormEvent<HTMLFormElement>) {
         evt.preventDefault()
 
         axios.post(
             'http://localhost:8080/curso/create', dados
         ).then((response) => {
-            if (response.data.error)
-                return alert('Curso nao cadastrado!')
+            if (response.data.error) return alert('Curso nao cadastrado!')
             alert('Curso cadastrado con sucesso!')
-            evt.target.form.reset();
+            evt.target.reset();
         }, (error) => {
             alert(error)
         });
@@ -57,7 +56,7 @@ export default function GerenciarCurso() {
                     <Link href="/usuarios">Voltar a listagem</Link>
                 </div>
 
-                <Form className="containerFormGerenciar">
+                <Form className="containerFormGerenciar" onSubmit={onClickCadastrar} >
                     <h4>Registre um novo curso</h4>
                     <Form.Group as={Row} controlId="formNameUser">
                         <Form.Label column sm="2">
@@ -120,10 +119,9 @@ export default function GerenciarCurso() {
                             <Form.Control as="textarea" name="Descricao" onChange={onChangeData} rows={3} />
                         </Col>
                     </Form.Group>
-                    <Button onClick={onClickCadastrar} variant="primary" type="submit" block>
+                    <Button variant="primary" type="submit" block>
                         Cadastrar
                     </Button>
-
                 </Form>
             </div>
         </>
