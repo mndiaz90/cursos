@@ -22,8 +22,7 @@ const Curso = new mongoose.Schema({
         required: true
     },
     Descricao: {
-        type: String,
-        required: true
+        type: String
     },
 }, {
     timestamps: true
