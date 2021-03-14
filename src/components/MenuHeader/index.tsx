@@ -1,10 +1,9 @@
 
 import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
 import Link from "next/link";
-import styles from "../../styles/components/MenuHeader.module.css";
+import styles from "../../../styles/components/MenuHeader.module.css";
 
 export function MenuHeader() {
-
     return (
         <div className={styles.containerMenuHeader}>
             <title>Matriculas</title>
