@@ -2,7 +2,7 @@
 import styles from "../styles/Cursos.module.css";
 import { MenuHeader } from "../src/components/MenuHeader";
 
-import axios from 'axios'
+let client = require('../api/client.js');
 
 interface CursoProps {
     dados: Array<DadosCurso>
@@ -51,8 +51,8 @@ export default function Cursos(props: CursoProps) {
 }
 
 Cursos.getInitialProps = async () => {
-    const response = await axios.get(
-        'http://localhost:8080/cursos'
+    const response = await client.get(
+        'cursos'
     )
 
     return {

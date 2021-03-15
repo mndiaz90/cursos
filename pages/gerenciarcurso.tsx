@@ -2,7 +2,8 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { MenuHeader } from "../src/components/MenuHeader";
 import Link from "next/link";
-import axios from 'axios';
+
+let client = require('../api/client.js');
 
 interface DadosCurso {
     id: number;
@@ -36,8 +37,8 @@ export default function GerenciarCurso() {
     function onClickCadastrar(evt: FormEvent<HTMLFormElement>) {
         evt.preventDefault()
 
-        axios.post(
-            'http://localhost:8080/curso/create', dados
+        client.post(
+            'curso/create', dados
         ).then((response) => {
             if (response.data.error) return alert('Curso nao cadastrado!')
             alert('Curso cadastrado con sucesso!')
