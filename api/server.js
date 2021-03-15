@@ -1,14 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
-const uri = process.env.MONGODB_URI;
+const PORT = process.env.PORT || 5000;
+const uri = process.env.MONGODB_URI || "mongodb://localhost/matricula";
 
 require('./models/Curso')
 
 const Curso = mongoose.model('curso')
 const server = express();
-
+server.listen(PORT, () => console.log(`Listening on ${PORT}`));
 server.use(express.json())
 
 server.use((req, res, next) => {
