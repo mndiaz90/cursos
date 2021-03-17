@@ -28,7 +28,6 @@ export function MenuHeader() {
             </Dropdown>
 
             <Dropdown as={ButtonGroup}>
-
                 <Button >
                     <Link href='/cursos'>Cursos</Link>
                 </Button>

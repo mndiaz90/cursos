@@ -54,7 +54,7 @@ export default function GerenciarCurso() {
             <div className="containerAllPages">
                 <div className="containerFormGerenciar">
                     <i className="fa fa-arrow-left"></i>
-                    <Link href="/usuarios">Voltar a listagem</Link>
+                    <Link href="/cursos">Voltar a listagem</Link>
                 </div>
 
                 <Form className="containerFormGerenciar" onSubmit={onClickCadastrar} >
